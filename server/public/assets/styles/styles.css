@@ -1,3 +1,39 @@
+body{
+  background-image:url("128-168.jpg");
+  background-repeat:repeat;
+  text-align: center;
+}
+
+#page-wrap {
+     width: 800px;
+     margin: 0 auto;
+}
+
+.tasks{
+    max-width: 500px;
+    padding: inherit;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 30px;
+    padding-bottom: 3px;
+}
+
+.toDoList, .completedTasks {
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px 2px 1px 2px;
+  max-width: 500px;
+  padding: 12px 12px 10px 12px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+
+
 .completedTasks {
   background-color: lime;
 
