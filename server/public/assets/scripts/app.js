@@ -72,10 +72,9 @@ function completeToServer() {
   // $('.toDoList').text("");
   // $('.completedTasks').text("");
 
-  //This isn't good code, but makes it work 100%.
-  getInfo();
-  getInfo();
-  getInfo();
+  //Inserting the setTimeout b/c there is a glitch that happens occasionally
+  //where it will not communicate fast enough.
+  setTimeout( getInfo(), 50);
 }
 
 // function complete(){
