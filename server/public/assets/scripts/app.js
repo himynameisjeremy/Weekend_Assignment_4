@@ -16,6 +16,14 @@ function getInfo(){
           throwStuffinArray(response);
         }
     });
+    // dev's idiot hack that works
+      $.ajax({
+            type: "GET",
+            url: "/tasks/",
+            success: function(response){
+              throwStuffinArray(response);
+            }
+        });
 }
 
 function handleSubmit(event) {
@@ -71,10 +79,7 @@ function completeToServer() {
   });
   // $('.toDoList').text("");
   // $('.completedTasks').text("");
-
-  //Inserting the setTimeout b/c there is a glitch that happens occasionally
-  //where it will not communicate fast enough.
-  setTimeout( getInfo(), 50);
+getInfo();
 }
 
 // function complete(){
@@ -92,7 +97,7 @@ function completeToServer() {
 // }
 
 function throwStuffinArray(data){
-  totalTaskArray = [];
+
   $('.toDoList').text("");
   $('.completedTasks').text("");
   for(var i = 0; i < data.length; i++){
@@ -112,5 +117,7 @@ function throwStuffinArray(data){
       shortList.append('<button class="complete" data-id='+""+doTheseThings.id+'>'+'Complete</button>');
       shortList.append('<button class="delete" data-id='+""+doTheseThings.id+'>'+'Delete</button>');
     }
+
   }
+  totalTaskArray = [];
 }
