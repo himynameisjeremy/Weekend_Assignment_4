@@ -65,20 +65,35 @@ function completeToServer() {
     url: '/tasks',
     data: idObject,
     success: function(response){
-      console.log("Beam me up, Scotty!");
+      // var data = response;
+      // return data;
     }
   });
-  $('.toDoList').text("");
-  $('.completedTasks').text("");
+  // $('.toDoList').text("");
+  // $('.completedTasks').text("");
+
+  //This isn't good code, but makes it work 100%.
+  getInfo();
+  getInfo();
   getInfo();
 }
 
-function throwStuffinArray(data){
-  throwStuffinArray2(data);
-  totalTaskArray = [];
-}
+// function complete(){
+//   var id = $(this).data('id');
+//   var idObject = {"id":id};
+//   completeToServer(idObject);
+//   getInfo();
+// }
 
-function throwStuffinArray2(data){
+
+// function throwStuffinArray(data){
+//   totalTaskArray = [];
+//   throwStuffinArray2(data);
+
+// }
+
+function throwStuffinArray(data){
+  totalTaskArray = [];
   $('.toDoList').text("");
   $('.completedTasks').text("");
   for(var i = 0; i < data.length; i++){
